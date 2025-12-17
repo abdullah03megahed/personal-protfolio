@@ -1,0 +1,111 @@
+.about-section {
+    padding: 80px 20px;
+}
+
+.about-container {
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.section-title {
+    font-size: clamp(2rem, 4vw, 3rem);
+    font-weight: 700;
+    text-align: center;
+    margin-bottom: 60px;
+    color: #2d3748;
+}
+
+.about-content-wrapper {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 40px;
+    align-items: center;
+}
+
+.layout-image_left .about-content-wrapper {
+    grid-template-columns: 1fr 1.5fr;
+}
+
+.layout-image_right .about-content-wrapper {
+    grid-template-columns: 1.5fr 1fr;
+}
+
+.layout-image_right .about-image-wrapper {
+    order: 2;
+}
+
+.layout-centered .about-content-wrapper {
+    grid-template-columns: 1fr;
+    text-align: center;
+}
+.about-image-wrapper {
+    position: relative;
+}
+
+.about-image {
+    width: 100%;
+    height: auto;
+    border-radius: 15px;
+    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease;
+}
+
+.about-image:hover {
+    transform: scale(1.02);
+}
+
+.about-text-content {
+    color: #4a5568;
+}
+
+.about-description {
+    font-size: 1.1rem;
+    line-height: 1.8;
+    margin-bottom: 30px;
+}
+
+.about-stats {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+    gap: 20px;
+    margin-top: 30px;
+}
+
+.stat-item {
+    text-align: center;
+    padding: 20px;
+    background: #ffffff;
+    border-radius: 10px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.stat-item:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
+}
+
+.stat-number {
+    font-size: 2.5rem;
+    font-weight: 700;
+    color: #667eea;
+    margin-bottom: 5px;
+}
+
+.stat-label {
+    font-size: 0.9rem;
+    color: #718096;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+@media (max-width: 768px) {
+    .layout-image_left .about-content-wrapper,
+    .layout-image_right .about-content-wrapper {
+        grid-template-columns: 1fr;
+    }
+    
+    .layout-image_right .about-image-wrapper {
+        order: 1;
+    }
+}

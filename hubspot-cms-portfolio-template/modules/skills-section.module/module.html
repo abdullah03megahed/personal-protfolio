@@ -1,0 +1,65 @@
+{% if module.show_section %}
+<div class="skills-section"
+     style="background-color: {{ module.background_color.color }};"
+     data-aos="fade-up">
+     
+    <div class="skills-container">
+  
+        <div class="section-header">
+            {% if module.section_title %}
+            <h2 class="section-title">{{ module.section_title }}</h2>
+            {% endif %}
+            
+            {% if module.section_subtitle %}
+            <p class="section-subtitle">{{ module.section_subtitle }}</p>
+            {% endif %}
+        </div>
+        
+
+        {% if module.skills %}
+        <div class="skills-grid display-{{ module.display_style }}">
+            {% for skill in module.skills %}
+            
+            {% if module.display_style == "bars" %}
+            <div class="skill-item skill-bar" data-aos="fade-right" data-aos-delay="{{ loop.index0 * 100 }}">
+                <div class="skill-header">
+                    {% if skill.skill_icon.src %}
+                    <img src="{{ skill.skill_icon.src }}" alt="{{ skill.skill_name }}" class="skill-icon-small" />
+                    {% endif %}
+                    <span class="skill-name">{{ skill.skill_name }}</span>
+                    <span class="skill-percentage">{{ skill.skill_level }}%</span>
+                </div>
+                <div class="skill-progress-bar">
+                    <div class="skill-progress-fill" 
+                         style="width: {{ skill.skill_level }}%; background-color: {{ skill.skill_color.color }};"
+                         data-progress="{{ skill.skill_level }}">
+                    </div>
+                </div>
+            </div>
+            
+            {% elif module.display_style == "cards" %}
+            <div class="skill-item skill-card" data-aos="zoom-in" data-aos-delay="{{ loop.index0 * 100 }}">
+                {% if skill.skill_icon.src %}
+                <img src="{{ skill.skill_icon.src }}" alt="{{ skill.skill_name }}" class="skill-icon" />
+                {% endif %}
+                <h3 class="skill-name">{{ skill.skill_name }}</h3>
+                <div class="skill-level-badge" style="background-color: {{ skill.skill_color.color }};">
+                    {{ skill.skill_level }}%
+                </div>
+            </div>
+            
+            {% elif module.display_style == "icons" %}
+            <div class="skill-item skill-icon-item" data-aos="flip-left" data-aos-delay="{{ loop.index0 * 100 }}">
+                {% if skill.skill_icon.src %}
+                <img src="{{ skill.skill_icon.src }}" alt="{{ skill.skill_name }}" class="skill-icon-large" />
+                {% endif %}
+                <span class="skill-name">{{ skill.skill_name }}</span>
+            </div>
+            {% endif %}
+            
+            {% endfor %}
+        </div>
+        {% endif %}
+    </div>
+</div>
+{% endif %}

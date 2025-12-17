@@ -1,0 +1,98 @@
+[
+  {
+    "id": "show_section",
+    "name": "show_section",
+    "label": "Show Projects Section",
+    "type": "boolean",
+    "default": true
+  },
+  {
+    "id": "section_title",
+    "name": "section_title",
+    "label": "Section Title",
+    "type": "text",
+    "default": "My Projects"
+  },
+  {
+    "id": "section_subtitle",
+    "name": "section_subtitle",
+    "label": "Section Subtitle",
+    "type": "text",
+    "default": "Check out some of my recent work"
+  },
+  {
+    "id": "background_color",
+    "name": "background_color",
+    "label": "Background Color",
+    "type": "color",
+    "default": {
+      "color": "#f7fafc",
+      "opacity": 100
+    }
+  },
+  {
+    "id": "projects",
+    "name": "projects",
+    "label": "Projects",
+    "type": "group",
+    "occurrence": {
+      "min": 1,
+      "max": 12,
+      "default": 3
+    },
+    "children": [
+      {
+        "id": "project_title",
+        "name": "project_title",
+        "label": "Project Title",
+        "type": "text",
+        "default": "Project Name"
+      },
+      {
+        "id": "project_description",
+        "name": "project_description",
+        "label": "Project Description",
+        "type": "textarea",
+        "default": "Brief description of the project..."
+      },
+      {
+        "id": "project_image",
+        "name": "project_image",
+        "label": "Project Image",
+        "type": "image",
+        "required": true
+      },
+      {
+        "id": "project_tags",
+        "name": "project_tags",
+        "label": "Project Tags (comma-separated)",
+        "type": "text",
+        "default": "Web Design, React, Node.js"
+      },
+      {
+        "id": "project_link",
+        "name": "project_link",
+        "label": "Project Link",
+        "type": "url"
+      },
+      {
+        "id": "github_link",
+        "name": "github_link",
+        "label": "GitHub Link (Optional)",
+        "type": "url"
+      }
+    ]
+  },
+  {
+    "id": "columns",
+    "name": "columns",
+    "label": "Grid Columns",
+    "type": "choice",
+    "choices": [
+      ["2", "2 Columns"],
+      ["3", "3 Columns"],
+      ["4", "4 Columns"]
+    ],
+    "default": "3"
+  }
+]

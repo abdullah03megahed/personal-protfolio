@@ -1,0 +1,104 @@
+[
+  {
+    "id": "show_section",
+    "name": "show_section",
+    "label": "Show Contact Section",
+    "type": "boolean",
+    "default": true
+  },
+  {
+    "id": "section_title",
+    "name": "section_title",
+    "label": "Section Title",
+    "type": "text",
+    "default": "Let's Work Together"
+  },
+  {
+    "id": "section_description",
+    "name": "section_description",
+    "label": "Section Description",
+    "type": "richtext",
+    "default": "<p>Have a project in mind? Let's discuss how we can work together.</p>"
+  },
+  {
+    "id": "background_type",
+    "name": "background_type",
+    "label": "Background Type",
+    "type": "choice",
+    "choices": [
+      ["color", "Solid Color"],
+      ["gradient", "Gradient"]
+    ],
+    "default": "gradient"
+  },
+  {
+    "id": "background_color",
+    "name": "background_color",
+    "label": "Background Color",
+    "type": "color",
+    "default": {
+      "color": "#667eea",
+      "opacity": 100
+    }
+  },
+  {
+    "id": "cta_button_text",
+    "name": "cta_button_text",
+    "label": "CTA Button Text",
+    "type": "text",
+    "default": "Get In Touch"
+  },
+  {
+    "id": "cta_button_link",
+    "name": "cta_button_link",
+    "label": "CTA Button Link",
+    "type": "url",
+    "default": {
+      "href": "mailto:hello@example.com"
+    }
+  },
+  {
+    "id": "contact_methods",
+    "name": "contact_methods",
+    "label": "Contact Methods",
+    "type": "group",
+    "occurrence": {
+      "min": 0,
+      "max": 5,
+      "default": 3
+    },
+    "children": [
+      {
+        "id": "method_icon",
+        "name": "method_icon",
+        "label": "Icon",
+        "type": "icon",
+        "default": {
+          "name": "envelope",
+          "unicode": "f0e0",
+          "type": "SOLID"
+        }
+      },
+      {
+        "id": "method_label",
+        "name": "method_label",
+        "label": "Label",
+        "type": "text",
+        "default": "Email"
+      },
+      {
+        "id": "method_value",
+        "name": "method_value",
+        "label": "Value",
+        "type": "text",
+        "default": "hello@example.com"
+      },
+      {
+        "id": "method_link",
+        "name": "method_link",
+        "label": "Link (Optional)",
+        "type": "url"
+      }
+    ]
+  }
+]

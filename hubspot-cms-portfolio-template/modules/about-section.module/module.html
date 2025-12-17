@@ -1,0 +1,44 @@
+{% if module.show_section %}
+<div class="about-section layout-{{ module.layout_style }}"
+     style="background-color: {{ module.background_color.color }};"
+     data-aos="fade-up">
+     
+    <div class="about-container">
+
+        {% if module.section_title %}
+        <h2 class="section-title">{{ module.section_title }}</h2>
+        {% endif %}
+        
+        <div class="about-content-wrapper">
+    
+            {% if module.about_image.src %}
+            <div class="about-image-wrapper">
+                <img src="{{ module.about_image.src }}" 
+                     alt="{{ module.about_image.alt }}" 
+                     class="about-image"
+                     loading="lazy" />
+            </div>
+            {% endif %}
+            
+            <div class="about-text-content">
+                {% if module.about_content %}
+                <div class="about-description">
+                    {{ module.about_content }}
+                </div>
+                {% endif %}
+                
+                {% if module.stats %}
+                <div class="about-stats">
+                    {% for stat in module.stats %}
+                    <div class="stat-item">
+                        <div class="stat-number">{{ stat.stat_number }}</div>
+                        <div class="stat-label">{{ stat.stat_label }}</div>
+                    </div>
+                    {% endfor %}
+                </div>
+                {% endif %}
+            </div>
+        </div>
+    </div>
+</div>
+{% endif %}

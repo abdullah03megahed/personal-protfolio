@@ -1,0 +1,60 @@
+{% if module.show_section %}
+<div class="contact-section contact-bg-{{ module.background_type }}"
+     {% if module.background_type == "color" %}
+     style="background-color: {{ module.background_color.color }};"
+     {% endif %}
+     data-aos="fade-up">
+     
+    <div class="contact-container">
+       
+        <div class="contact-header">
+            {% if module.section_title %}
+            <h2 class="contact-title">{{ module.section_title }}</h2>
+            {% endif %}
+            
+            {% if module.section_description %}
+            <div class="contact-description">
+                {{ module.section_description }}
+            </div>
+            {% endif %}
+        </div>
+        
+      
+        {% if module.contact_methods %}
+        <div class="contact-methods">
+            {% for method in module.contact_methods %}
+            <div class="contact-method-item" data-aos="fade-up" data-aos-delay="{{ loop.index0 * 100 }}">
+                {% if method.method_icon %}
+                <div class="method-icon">
+                    {{ method.method_icon }}
+                </div>
+                {% endif %}
+                
+                <div class="method-content">
+                    <div class="method-label">{{ method.method_label }}</div>
+                    {% if method.method_link.href %}
+                    <a href="{{ method.method_link.href }}" class="method-value">
+                        {{ method.method_value }}
+                    </a>
+                    {% else %}
+                    <div class="method-value">{{ method.method_value }}</div>
+                    {% endif %}
+                </div>
+            </div>
+            {% endfor %}
+        </div>
+        {% endif %}
+        
+       
+        {% if module.cta_button_text and module.cta_button_link.href %}
+        <div class="contact-cta">
+            <a href="{{ module.cta_button_link.href }}" 
+               class="btn btn-large btn-white"
+               {% if module.cta_button_link.open_in_new_tab %}target="_blank" rel="noopener noreferrer"{% endif %}>
+                {{ module.cta_button_text }}
+            </a>
+        </div>
+        {% endif %}
+    </div>
+</div>
+{% endif %}
